@@ -1,3 +1,6 @@
+/* Import the Kanit font */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
 /* General Layout */
 body {
     margin: 0;
@@ -9,32 +12,32 @@ body {
     justify-content: center;
     height: 100vh;
     box-sizing: border-box;
-    font-weight: 400; /* Apply the linked font weights */
+    font-family: 'Kanit', sans-serif; /* Use Kanit for the whole page */
+    font-weight: 400;
 }
 
-/* Header */
+/* Header Styling */
+h1, h2 {
+    font-family: 'Kanit', sans-serif; /* Apply Kanit font */
+    font-weight: 700; /* Bold styling for headers */
+    text-align: center;
+    margin: 0;
+}
+
+/* h1 Specific Styling */
 h1 {
     color: #ffffff;
     background-color: #cf475a; /* Header red background */
     width: 100%;
-    text-align: center;
     padding: 15px 0;
-    margin: 0;
     font-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: 700; /* Use bold styling for headers */
 }
 
-/* Ensure the font is loaded */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
-
-/* Apply the font to all h2 elements */
+/* h2 Specific Styling */
 h2 {
-    font-family: 'Kanit', sans-serif;
-    font-weight: 700; /* Use bold for better emphasis on headings */
-    color: #ffffff; /* Optional: Set a default color for h2 elements */
-    margin-bottom: 15px; /* Optional: Add spacing below the h2 */
-    text-align: center; /* Optional: Center align h2 text */
+    color: #ffffff; /* White text for h2 */
+    margin-bottom: 15px; /* Spacing below the h2 */
 }
 
 /* Form Styling */
@@ -80,7 +83,8 @@ button, .button {
     text-align: center; /* Ensures the text is centered for links */
     text-decoration: none; /* Removes underline for links */
     display: inline-block; /* Allows the link to behave like a button */
-    width: auto; /* Keep this if you want full-width buttons */
+    width: auto; /* Button width adapts to content */
+    font-family: 'Kanit', sans-serif;
     font-weight: 400;
 }
 
@@ -97,6 +101,10 @@ button:active, .button:active {
     h1 {
         font-size: 20px;
         padding: 10px 0;
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust h2 font size for smaller screens */
     }
 }
 
