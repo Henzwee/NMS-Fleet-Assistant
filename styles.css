@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
 /* General Layout */
-body {
-    margin: 0;
+html, body {
+    margin: 0; /* Remove default margin */
     padding: 0;
+    height: 100%; /* Ensure the body takes up full height */
     background-color: #44aec4; /* Background color */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    box-sizing: border-box;
     font-family: 'Kanit', sans-serif; /* Use Kanit for the whole page */
     font-weight: 400;
 }
@@ -32,6 +32,8 @@ h1 {
     padding: 15px 0;
     font-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Ensure it adjusts to the top */
+    top: 0;
 }
 
 /* h2 Specific Styling */
@@ -107,4 +109,3 @@ button:active, .button:active {
         font-size: 18px; /* Adjust h2 font size for smaller screens */
     }
 }
-
