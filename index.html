@@ -6,7 +6,6 @@
     <title>NMS Fleet Assistant</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
-    </style>
     <script>
         // Store user credentials 
         const users = {
@@ -21,8 +20,7 @@
             const password = document.getElementById("password").value;
 
             if (users[username] && users[username] === password) {
-                alert(`Welcome, ${username}!`);
-                // Redirect to a personalized page or display personalized content
+                // Redirect directly to the personalized page
                 window.location.href = `${username}.html`;
             } else {
                 alert("Invalid username or password.");
