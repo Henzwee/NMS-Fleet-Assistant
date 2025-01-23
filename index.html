@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script>
-        // Store user credentials 
+        // Store user credentials
         const users = {
             "Henzwee": "captain",
             "Doakley42": "heartfailure"
@@ -19,19 +19,19 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
+            // Redirect if credentials are valid
             if (users[username] && users[username] === password) {
-                // Redirect directly to the personalized page
                 window.location.href = `${username}.html`;
             } else {
-                alert("Invalid username or password.");
+                // Optionally, highlight the invalid login fields or do nothing
+                document.getElementById("username").classList.add("invalid");
+                document.getElementById("password").classList.add("invalid");
             }
         }
     </script>
 </head>
 <body>
-    <h1><br><br>Login</h1>
-    <br>
-    <br>
+    <h1>Login</h1>
     <form onsubmit="login(event)">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
