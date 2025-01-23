@@ -68,8 +68,7 @@ button, .button {
     text-align: center; /* Ensures the text is centered for links */
     text-decoration: none; /* Removes underline for links */
     display: inline-block; /* Allows the link to behave like a button */
-    width: 100%; /* Keep this if you want full-width buttons */
-    font-family: 'Kanit', sans-serif;
+    width: auto; /* Keep this if you want full-width buttons */
     font-weight: 400;
 }
 
