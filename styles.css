@@ -2,32 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
 /* General Layout */
+/* General Layout */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensure the body takes up full height */
-    background-color: #44aec4; /* Background color */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif; /* Use Kanit for the whole page */
+    font-family: 'Kanit', sans-serif;
     font-weight: 400;
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    background-color: #44aec4; /* Background color */
+    display: flex; /* Center everything */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Header Styling */
 h1 {
-    color: #ffffff;
     background-color: #cf475a; /* Header red background */
-    width: 100%;
-    padding: 15px 0;
-    margin: 0; /* Remove margin to ensure it fills the top */
-    font-size: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Kanit', sans-serif;
+    color: #ffffff; /* White text */
+    width: 100%; /* Full width */
+    padding: 30px 0; /* Add padding inside the header */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center text horizontally */
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 36px; /* Adjust font size */
+    font-weight: 700; /* Bold text */
+    position: relative; /* Stay in the document flow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
 }
 
 h2 {
