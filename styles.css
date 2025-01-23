@@ -112,11 +112,11 @@ button:active, .button:active {
     }
 
     h1 {
-        font-size: 20px; /* Adjust font size for smaller screens */
+        font-size: 28px; /* Adjust font size for smaller screens */
         padding: 10px 0;
     }
 
     h2 {
-        font-size: 18px; /* Adjust h2 font size for smaller screens */
+        font-size: 22px; /* Adjust h2 font size for smaller screens */
     }
 }
