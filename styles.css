@@ -2,20 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
 /* General Layout */
-/* General Layout */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%; /* Full height */
     width: 100%; /* Full width */
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Kanit', sans-serif; /* Use Kanit font for the entire page */
     font-weight: 400;
     background-color: #44aec4; /* Background color */
-    display: flex; /* Center everything */
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Push content to the top */
 }
 
 /* Header Styling */
@@ -31,16 +30,8 @@ h1 {
     justify-content: center; /* Center text horizontally */
     font-size: 36px; /* Adjust font size */
     font-weight: 700; /* Bold text */
-    position: relative; /* Stay in the document flow */
+    position: relative; /* Ensure it's part of the normal document flow */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
-}
-
-h2 {
-    font-family: 'Kanit', sans-serif; /* Apply Kanit font */
-    text-align: center;
-    color: #ffffff; /* White text */
-    margin-bottom: 15px; /* Add spacing below h2 */
-    font-weight: 700;
 }
 
 /* Form Styling */
@@ -63,7 +54,6 @@ label {
     margin: 15px 0 5px;
     font-size: 16px;
     color: #333333;
-    font-family: 'Kanit', sans-serif;
     font-weight: 400;
 }
 
@@ -74,22 +64,54 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif;
+}
+
+/* Task List Styling */
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    width: 100%; /* Ensure list takes full width */
+    max-width: 600px; /* Limit list width */
+}
+
+li {
+    display: flex;
+    justify-content: space-between; /* Space between text and button */
+    align-items: center; /* Vertically align text and button */
+    background-color: #ffffff; /* Optional: Add a background color for list items */
+    margin: 10px 0; /* Space between list items */
+    padding: 10px 15px; /* Padding inside list items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 18px; /* Adjust text size */
+}
+
+li span {
+    flex-grow: 1; /* Ensure the text takes available space */
+    text-align: left; /* Align text to the left */
+}
+
+li button {
+    margin-left: 15px; /* Space between text and button */
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #cf475a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
     font-weight: 400;
 }
 
-/* Buttons and Links */
-.parent-container {
-    text-align: center; /* Ensures buttons are horizontally centered */
-    margin: 20px auto; /* Centers the container itself and adds spacing */
-    width: 100%; /* Ensure the container spans the full width */
-    display: flex; /* Flexbox ensures proper alignment */
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center the buttons horizontally */
+li button:active {
+    background-color: #b03d4e;
 }
 
-button, .button {
-    margin: 10px 0; /* Add space between buttons */
+/* Emergency Alert Button */
+button#alert {
+    margin-top: 20px;
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
@@ -97,40 +119,37 @@ button, .button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center; /* Ensure text is centered */
-    text-decoration: none; /* Remove underline for links */
-    display: inline-block; /* Allow button styling for links */
-    width: auto; /* Adjust button width */
-    max-width: 300px; /* Prevent buttons from becoming too wide */
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Prevent the button from becoming too wide */
 }
 
-button:active, .button:active {
+button#alert:active {
     background-color: #b03d4e;
 }
 
 /* Mobile Optimization */
 @media (max-width: 600px) {
-    .parent-container {
-        width: 100%; /* Ensure the container spans the screen width */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center buttons */
-        justify-content: center; /* Optional: Vertically center the container */
-    }
-
-    button, .button {
-        width: 90%; /* Make buttons fill more of the screen */
-        max-width: 350px; /* Adjust for slightly wider buttons */
-    }
-
     h1 {
-        font-size: 28px; /* Adjust font size for smaller screens */
-        padding: 10px 0;
+        font-size: 28px; /* Adjust header size for smaller screens */
+        padding: 20px 0; /* Adjust padding for smaller screens */
     }
 
-    h2 {
-        font-size: 22px; /* Adjust h2 font size for smaller screens */
+    form {
+        width: 90%; /* Ensure form is responsive */
+    }
+
+    li {
+        font-size: 16px; /* Adjust list item text size for smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    li button {
+        font-size: 12px; /* Reduce button text size */
+    }
+
+    button#alert {
+        font-size: 14px; /* Reduce alert button text size */
+        max-width: 90%; /* Make it adapt to smaller screens */
     }
 }
