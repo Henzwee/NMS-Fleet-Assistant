@@ -91,14 +91,6 @@ taskForm.addEventListener("submit", async (e) => {
     renderTasks();
 });
 
-// Toggle task done/undone
-async function toggleTask(index, done) {
-    const tasks = await fetchTasks();
-    tasks[index].done = done;
-    await updateTasks(tasks);
-    renderTasks();
-}
-
 // Delete a task
 async function deleteTask(index) {
     const tasks = await fetchTasks();
