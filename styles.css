@@ -25,6 +25,18 @@ h1 {
     font-weight: 700; /* Use bold styling for headers */
 }
 
+/* Ensure the font is loaded */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+/* Apply the font to all h2 elements */
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700; /* Use bold for better emphasis on headings */
+    color: #ffffff; /* Optional: Set a default color for h2 elements */
+    margin-bottom: 15px; /* Optional: Add spacing below the h2 */
+    text-align: center; /* Optional: Center align h2 text */
+}
+
 /* Form Styling */
 form {
     background-color: #ffffff;
