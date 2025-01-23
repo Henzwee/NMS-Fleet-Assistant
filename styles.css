@@ -30,8 +30,6 @@ h1 {
     justify-content: center; /* Center text horizontally */
     font-size: 36px; /* Adjust font size */
     font-weight: 700; /* Bold text */
-    position: sticky; /* Keep it visible at the top of the page */
-    top: 0; /* Ensure it sticks to the very top */
     z-index: 100; /* Make sure it’s on top of other elements */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
 }
@@ -141,6 +139,7 @@ button#assistance {
     font-weight: 400; /* Remove bold font */
     width: 100%; /* Make buttons fill their container */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-decoration: none;
 }
 
 button#alert:hover,
