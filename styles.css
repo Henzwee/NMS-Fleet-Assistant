@@ -10,6 +10,10 @@ html, body {
     box-sizing: border-box;
     font-family: 'Kanit', sans-serif; /* Use Kanit for the whole page */
     font-weight: 400;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
 }
 
 /* Header Styling */
@@ -31,8 +35,7 @@ h2 {
     text-align: center;
     color: #ffffff; /* White text */
     margin-bottom: 15px; /* Add spacing below h2 */
-     font-weight: 700;
-    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
 }
 
 /* Form Styling */
@@ -44,6 +47,10 @@ form {
     width: 90%;
     max-width: 400px;
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center elements within the form */
+    margin: 20px auto;
 }
 
 label {
@@ -88,7 +95,7 @@ button, .button {
     text-align: center; /* Ensure text is centered */
     text-decoration: none; /* Remove underline for links */
     display: inline-block; /* Allow button styling for links */
-    width: 80%; /* Adjust button width for smaller screens */
+    width: auto; /* Adjust button width */
     max-width: 300px; /* Prevent buttons from becoming too wide */
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
