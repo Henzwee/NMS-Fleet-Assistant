@@ -134,8 +134,8 @@ li span {
 }
 
 li button {
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 8px 12px; /* Padding for the button */
+    font-size: 14px; /* Font size */
     background-color: #cf475a; /* Red background for task buttons */
     color: white; /* White text for task buttons */
     border: none; /* Remove default border */
@@ -144,6 +144,8 @@ li button {
     text-align: center; /* Center the button text */
     font-weight: 400; /* Normal font weight */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for task buttons */
+    width: 70px; /* Set a fixed width for consistency */
+    flex-shrink: 0; /* Prevent the button from shrinking */
 }
 
 li button:hover {
@@ -153,6 +155,7 @@ li button:hover {
 li button:active {
     background-color: #b03d4e; /* Darker red on click */
 }
+
 
 /* Emergency Alert and Assistance Buttons */
 .parent-container {
