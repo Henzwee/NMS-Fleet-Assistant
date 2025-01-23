@@ -30,7 +30,6 @@ h1 {
     justify-content: center; /* Center text horizontally */
     font-size: 36px; /* Adjust font size */
     font-weight: 700; /* Bold text */
-    z-index: 100; /* Make sure it’s on top of other elements */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
 }
 
@@ -64,6 +63,42 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+/* Links */
+a {
+    text-decoration: none; /* Remove underline from all links */
+    color: inherit; /* Ensure links inherit the color of their container */
+}
+
+a:hover {
+    text-decoration: underline; /* Optionally add an underline on hover */
+}
+
+/* Buttons */
+button, .button {
+    margin-top: 15px; /* Space between buttons and elements above */
+    padding: 10px 15px; /* Button padding */
+    font-size: 16px; /* Font size */
+    background-color: #cf475a; /* Red button background */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    font-family: 'Kanit', sans-serif; /* Button font */
+    font-weight: 400; /* Normal font weight */
+    width: auto; /* Allow buttons to adjust width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: inline-block; /* Ensures link buttons behave like buttons */
+}
+
+button:hover, .button:hover {
+    background-color: #e9606e; /* Lighter red on hover */
+}
+
+button:active, .button:active {
+    background-color: #b03d4e; /* Darker red on click */
 }
 
 /* Task List Styling */
@@ -139,7 +174,6 @@ button#assistance {
     font-weight: 400; /* Remove bold font */
     width: 100%; /* Make buttons fill their container */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-decoration: none;
 }
 
 button#alert:hover,
