@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NMS Fleet Assistant</title>
+    <title>NMS Fleet Assistant - Login</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <script>
@@ -16,16 +16,25 @@
         // Handle the login process
         function login(event) {
             event.preventDefault();
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
 
-            // Redirect if credentials are valid
+            // Validate user credentials
             if (users[username] && users[username] === password) {
+                // Redirect to the user's page if credentials are valid
                 window.location.href = `${username}.html`;
             } else {
-                // Optionally, highlight the invalid login fields or do nothing
-                document.getElementById("username").classList.add("invalid");
-                document.getElementById("password").classList.add("invalid");
+                // Add 'invalid' class to highlight invalid input fields
+                const usernameField = document.getElementById("username");
+                const passwordField = document.getElementById("password");
+                usernameField.classList.add("invalid");
+                passwordField.classList.add("invalid");
+
+                // Optionally, add a timeout to remove the invalid class
+                setTimeout(() => {
+                    usernameField.classList.remove("invalid");
+                    passwordField.classList.remove("invalid");
+                }, 2000);
             }
         }
     </script>
@@ -34,9 +43,9 @@
     <h1>Login</h1>
     <form onsubmit="login(event)">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" required>
         <button type="submit">Login</button>
     </form>
 </body>
