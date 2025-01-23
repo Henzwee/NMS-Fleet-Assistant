@@ -5,32 +5,32 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Full height */
-    width: 100%; /* Full width */
+    min-height: 100vh; /* Ensure full height for content */
+    width: 100%;
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif; /* Use Kanit font for the entire page */
+    font-family: 'Kanit', sans-serif;
     font-weight: 400;
-    background-color: #44aec4; /* Background color */
+    background-color: #44aec4;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: flex-start; /* Push content to the top */
+    align-items: center;
+    justify-content: flex-start;
 }
 
 /* Header Styling */
 h1 {
-    background-color: #cf475a; /* Header red background */
-    color: #ffffff; /* White text */
-    width: 100%; /* Full width */
-    padding: 40px 0; /* Add more padding for spacing */
-    margin: 0; /* Remove default margin */
-    text-align: center; /* Center text horizontally */
-    display: flex; /* Use flexbox for vertical centering */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    font-size: 36px; /* Adjust font size */
-    font-weight: 700; /* Bold text */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+    background-color: #cf475a;
+    color: #ffffff;
+    width: 100%;
+    padding: 40px 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Form Styling */
@@ -43,13 +43,12 @@ form {
     max-width: 400px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* Stack form elements vertically */
-    align-items: center; /* Center elements within the form */
+    flex-direction: column;
+    align-items: center;
     margin: 20px auto;
 }
 
 label {
-    display: block;
     margin: 15px 0 5px;
     font-size: 16px;
     color: #333333;
@@ -65,153 +64,69 @@ input {
     box-sizing: border-box;
 }
 
+input:focus, button:focus, .button:focus {
+    outline: 2px solid #e9606e;
+    outline-offset: 2px;
+}
+
 /* Links */
 a {
-    text-decoration: none; /* Remove underline from all links */
-    color: inherit; /* Ensure links inherit the color of their container */
+    text-decoration: none;
+    color: inherit;
 }
 
 a:hover {
-    text-decoration: underline; /* Optionally add an underline on hover */
+    text-decoration: underline;
 }
 
 /* Buttons */
 button, .button {
-    margin-top: 15px; /* Space between buttons and elements above */
-    padding: 10px 15px; /* Button padding */
-    font-size: 16px; /* Font size */
-    background-color: #cf475a; /* Red button background */
-    color: #ffffff; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-align: center; /* Center text */
-    font-family: 'Kanit', sans-serif; /* Button font */
-    font-weight: 400; /* Normal font weight */
-    width: auto; /* Allow buttons to adjust width */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: inline-block; /* Ensures link buttons behave like buttons */
-}
-
-button:hover, .button:hover {
-    background-color: #e9606e; /* Lighter red on hover */
-}
-
-button:active, .button:active {
-    background-color: #b03d4e; /* Darker red on click */
-}
-
-/* Task List Styling */
-ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0 0 20px; /* Add space below task list */
-    width: 100%; /* Ensure list takes full width */
-    max-width: 600px; /* Limit list width */
-}
-
-li {
-    display: flex;
-    justify-content: space-between; /* Space between text and button */
-    align-items: center; /* Vertically align text and button */
-    background-color: #ffffff; /* Add background color for list items */
-    margin: 10px 0; /* Space between list items */
-    padding: 10px 15px; /* Padding inside list items */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-size: 18px; /* Adjust text size */
-}
-
-li span {
-    flex-grow: 1; /* Ensure the text takes available space */
-    text-align: left; /* Align text to the left */
-    line-height: 1.5; /* Ensure text is vertically aligned */
-    margin-right: 15px; /* Add spacing between text and button */
-}
-
-/* Restore Button Styling for Task List */
-li button {
-    padding: 8px 12px;
-    font-size: 14px;
-    background-color: #cf475a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400; /* Remove bold font */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-li button:hover {
-    background-color: #e9606e; /* Lighter red on hover */
-}
-
-li button:active {
-    background-color: #b03d4e; /* Darker red on click */
-}
-
-/* Emergency Alert and Assistance Buttons */
-.parent-container {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px; /* Add space between buttons */
-    width: 100%;
-    max-width: 300px; /* Limit the width of buttons */
-    margin: 20px auto; /* Add space between the buttons and the task list */
-}
-
-button#alert,
-button#assistance {
+    margin-top: 15px;
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    font-weight: 400; /* Remove bold font */
-    width: 100%; /* Make buttons fill their container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
 }
 
-button#alert:hover,
-button#assistance:hover {
-    background-color: #e9606e; /* Lighter red on hover */
+button:hover, .button:hover {
+    background-color: #e9606e;
 }
 
-button#alert:active,
-button#assistance:active {
-    background-color: #b03d4e; /* Darker red on click */
+button:active, .button:active {
+    background-color: #b03d4e;
 }
 
-/* Mobile Optimization */
+input.invalid {
+    border: 2px solid #cf475a;
+    background-color: #ffe6e6;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+}
+
 @media (max-width: 600px) {
     h1 {
-        font-size: 28px; /* Adjust header size for smaller screens */
-        padding: 20px 0; /* Adjust padding for smaller screens */
+        font-size: 28px;
+        padding: 20px 10px;
     }
 
-    form {
-        width: 90%; /* Ensure form is responsive */
-    }
-
-    li {
-        font-size: 16px; /* Adjust list item text size for smaller screens */
-        padding: 10px; /* Reduce padding */
-    }
-
-    li button {
-        font-size: 12px; /* Reduce button text size */
-    }
-
-    .parent-container {
-        width: 90%; /* Ensure buttons adapt to smaller screens */
-    }
-
-    button#alert,
-    button#assistance {
-        font-size: 14px; /* Reduce alert button text size */
+    button, .button {
+        font-size: 14px;
+        width: 90%;
     }
 }
