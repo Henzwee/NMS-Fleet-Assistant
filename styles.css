@@ -22,7 +22,7 @@ h1 {
     background-color: #cf475a; /* Header red background */
     color: #ffffff; /* White text */
     width: 100%; /* Full width */
-    padding: 30px 0; /* Add padding inside the header */
+    padding: 40px 0; /* Add more padding for spacing */
     margin: 0; /* Remove default margin */
     text-align: center; /* Center text horizontally */
     display: flex; /* Use flexbox for vertical centering */
@@ -30,7 +30,9 @@ h1 {
     justify-content: center; /* Center text horizontally */
     font-size: 36px; /* Adjust font size */
     font-weight: 700; /* Bold text */
-    position: relative; /* Ensure it's part of the normal document flow */
+    position: sticky; /* Keep it visible at the top of the page */
+    top: 0; /* Ensure it sticks to the very top */
+    z-index: 100; /* Make sure it’s on top of other elements */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
 }
 
@@ -79,7 +81,7 @@ li {
     display: flex;
     justify-content: space-between; /* Space between text and button */
     align-items: center; /* Vertically align text and button */
-    background-color: #ffffff; /* Optional: Add a background color for list items */
+    background-color: #ffffff; /* Add background color for list items */
     margin: 10px 0; /* Space between list items */
     padding: 10px 15px; /* Padding inside list items */
     border-radius: 5px; /* Rounded corners */
@@ -90,10 +92,11 @@ li {
 li span {
     flex-grow: 1; /* Ensure the text takes available space */
     text-align: left; /* Align text to the left */
+    line-height: 1.5; /* Ensure text is vertically aligned */
+    margin-right: 15px; /* Add spacing between text and button */
 }
 
 li button {
-    margin-left: 15px; /* Space between text and button */
     padding: 8px 12px;
     font-size: 14px;
     background-color: #cf475a;
