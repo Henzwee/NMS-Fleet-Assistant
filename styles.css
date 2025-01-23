@@ -67,8 +67,15 @@ input {
     font-weight: 400;
 }
 
+/* Ensure the buttons' parent container is centered */
+.parent-container {
+    text-align: center; /* Center-aligns inline-block elements like buttons */
+    margin-top: 20px; /* Optional: Adds spacing from the top */
+}
+
+/* Button styling */
 button, .button {
-    margin-top: 20px;
+    margin: 10px auto; /* Add spacing between buttons and center them */
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
@@ -76,10 +83,10 @@ button, .button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center; /* Ensures the text is centered for links */
+    text-align: center;
     text-decoration: none; /* Removes underline for links */
-    display: inline-block; /* Allows the link to behave like a button */
-    width: auto; /* Button width adapts to content */
+    display: inline-block; /* Ensures the buttons behave like inline elements */
+    width: auto; /* Ensure buttons fit their content */
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
 }
@@ -88,6 +95,20 @@ button:active, .button:active {
     background-color: #b03d4e;
 }
 
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .parent-container {
+        display: flex; /* Flexbox for centering */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Horizontally center buttons */
+        justify-content: center; /* Vertically center buttons */
+    }
+
+    button, .button {
+        width: 80%; /* Ensure buttons are not too wide on small screens */
+        max-width: 300px; /* Optional: Limit the button width */
+    }
+}
 /* Mobile Optimization */
 @media (max-width: 600px) {
     form {
