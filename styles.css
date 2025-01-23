@@ -3,7 +3,7 @@
 
 /* General Layout */
 html, body {
-    margin: 0; /* Remove default margin */
+    margin: 0;
     padding: 0;
     height: 100%; /* Ensure the body takes up full height */
     background-color: #44aec4; /* Background color */
@@ -16,25 +16,21 @@ html, body {
 h1 {
     color: #ffffff;
     background-color: #cf475a; /* Header red background */
-    width: 100%; /* Full width */
+    width: 100%;
     padding: 15px 0;
     margin: 0; /* Remove margin to ensure it fills the top */
     font-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: 700; /* Use bold styling for headers */
-    position: sticky; /* Optional: keeps the header fixed at the top */
-    top: 0;
-    z-index: 10; /* Ensures it stays on top of other content */
+    font-weight: 700; /* Bold styling */
     text-align: center;
 }
 
-/* h2 Specific Styling */
 h2 {
-    color: #ffffff; /* White text for h2 */
-    margin-bottom: 15px; /* Spacing below the h2 */
-    text-align: center;
     font-family: 'Kanit', sans-serif; /* Apply Kanit font */
-    font-weight: 700;
+    font-weight: 700; /* Bold styling */
+    text-align: center;
+    color: #ffffff; /* White text */
+    margin-bottom: 15px; /* Add spacing below h2 */
 }
 
 /* Form Styling */
@@ -68,15 +64,18 @@ input {
     font-weight: 400;
 }
 
-/* Ensure the buttons' parent container is centered */
+/* Buttons and Links */
 .parent-container {
-    text-align: center; /* Center-aligns inline-block elements like buttons */
-    margin-top: 20px; /* Optional: Adds spacing from the top */
+    text-align: center; /* Ensures buttons are horizontally centered */
+    margin: 20px auto; /* Centers the container itself and adds spacing */
+    width: 100%; /* Ensure the container spans the full width */
+    display: flex; /* Flexbox ensures proper alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
 }
 
-/* Button styling */
 button, .button {
-    margin: 10px auto; /* Add spacing between buttons and center them */
+    margin: 10px 0; /* Add space between buttons */
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
@@ -84,10 +83,11 @@ button, .button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none; /* Removes underline for links */
-    display: inline-block; /* Ensures the buttons behave like inline elements */
-    width: auto; /* Ensure buttons fit their content */
+    text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Allow button styling for links */
+    width: 80%; /* Adjust button width for smaller screens */
+    max-width: 300px; /* Prevent buttons from becoming too wide */
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
 }
@@ -99,25 +99,20 @@ button:active, .button:active {
 /* Mobile Optimization */
 @media (max-width: 600px) {
     .parent-container {
-        display: flex; /* Flexbox for centering */
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Horizontally center buttons */
-        justify-content: center; /* Vertically center buttons */
+        width: 100%; /* Ensure the container spans the screen width */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center buttons */
+        justify-content: center; /* Optional: Vertically center the container */
     }
 
     button, .button {
-        width: 80%; /* Ensure buttons are not too wide on small screens */
-        max-width: 300px; /* Optional: Limit the button width */
-    }
-}
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    form {
-        width: 90%;
+        width: 90%; /* Make buttons fill more of the screen */
+        max-width: 350px; /* Adjust for slightly wider buttons */
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 20px; /* Adjust font size for smaller screens */
         padding: 10px 0;
     }
 
