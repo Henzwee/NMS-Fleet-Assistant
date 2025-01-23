@@ -178,4 +178,10 @@ li button:active {
         font-size: 14px;
         width: 90%;
     }
+
+    ul {
+        margin: 0 auto 20px; /* Center the list horizontally */
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width constraint for better fit */
+    }
 }
