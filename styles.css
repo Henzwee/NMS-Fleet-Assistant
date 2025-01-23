@@ -98,17 +98,6 @@ button:active, .button:active {
     background-color: #b03d4e;
 }
 
-.yodabot-chatbot {
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 400px; /* Limit the maximum width */
-    height: 500px; /* Set a specific height */
-    position: fixed; /* Keep it fixed on the screen */
-    bottom: 20px; /* Position it 20px from the bottom */
-    right: 20px; /* Position it 20px from the right */
-    z-index: 1000; /* Ensure it stays on top of other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
-}
-
 /* Mobile Optimization */
 @media (max-width: 600px) {
     .parent-container {
