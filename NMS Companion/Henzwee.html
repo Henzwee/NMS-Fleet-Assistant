@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMS Fleet Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/edenai/yodabot@e4f753f/embed.js?project=57585b96-87bb-477d-8cc1-8ec08a2dde08&provider=openai&model=gpt-4&k=5&title=A.D.A.&message=A.D.A. standing by"></script>
+    <h1>Welcome, Captain</h1>
+    <h2>Shared To-Do List</h2>
+
+    <!-- Add your to-do list HTML and UI here -->
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Add a new task..." required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul id="taskList"></ul>
+
+    <a href="sms:+13175267281?body=EMERGENCY ALERT FROM HENZWEE. REGAIN CONTACT AND ASSIST IMMEDIATELY." class="button">Send Emergency Alert</a>
+
+    <script>
+      const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // Your JSONBin URL
+const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // Updated API Key
+
+const taskForm = document.getElementById("taskForm");
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
+
+// Fetch tasks from JSONBin
+async function fetchTasks() {
+    try {
+        const response = await fetch(API_URL, {
+            headers: {
+                "X-Master-Key": API_KEY
+            }
+        });
+        const data = await response.json();
+        console.log("Fetched tasks:", data.record.tasks); // Debug log
+        return data.record.tasks || [];
+    } catch (error) {
+        console.error("Error fetching tasks:", error);
+        return [];
+    }
+}
+
+// Update tasks in JSONBin
+async function updateTasks(tasks) {
+    try {
+        console.log("Updating tasks:", tasks); // Debug log
+        await fetch(API_URL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Master-Key": API_KEY
+            },
+            body: JSON.stringify({ tasks })
+        });
+    } catch (error) {
+        console.error("Error updating tasks:", error);
+    }
+}
+
+// Render tasks in the list
+async function renderTasks() {
+    const tasks = await fetchTasks();
+    console.log("Rendering tasks:", tasks); // Debug log
+    taskList.innerHTML = "";
+    tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span class="${task.done ? 'done' : ''}">${task.text}</span>
+            <button onclick="deleteTask(${index})">Done</button>
+        `;
+        taskList.appendChild(li);
+    });
+}
+
+// Add a new task
+taskForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const tasks = await fetchTasks();
+    tasks.push({ text: taskInput.value, done: false });
+    await updateTasks(tasks);
+    taskInput.value = "";
+    renderTasks();
+});
+
+// Toggle task done/undone
+async function toggleTask(index, done) {
+    const tasks = await fetchTasks();
+    tasks[index].done = done;
+    await updateTasks(tasks);
+    renderTasks();
+}
+
+// Delete a task
+async function deleteTask(index) {
+    const tasks = await fetchTasks();
+    tasks.splice(index, 1);
+    await updateTasks(tasks);
+    renderTasks();
+}
+
+// Initial render
+renderTasks();
+    </script>
+</body>
+</html>
