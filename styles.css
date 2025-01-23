@@ -105,12 +105,62 @@ input.invalid {
     background-color: #ffe6e6;
 }
 
+/* Task List Styling */
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0 0 20px; /* Add space below the task list */
+    width: 100%; /* Ensure list takes full width */
+    max-width: 600px; /* Limit the list width */
+}
+
+li {
+    display: flex;
+    justify-content: space-between; /* Space between text and button */
+    align-items: center; /* Vertically align text and button */
+    background-color: #ffffff; /* White background for the task box */
+    margin: 10px 0; /* Space between list items */
+    padding: 10px 15px; /* Padding inside the task box */
+    border-radius: 5px; /* Rounded corners for the task box */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the task box */
+    font-size: 18px; /* Text size inside the task box */
+}
+
+li span {
+    flex-grow: 1; /* Ensure the text takes up available space */
+    text-align: left; /* Align text to the left */
+    line-height: 1.5; /* Vertically align text */
+    margin-right: 15px; /* Add space between the text and the button */
+}
+
+li button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #cf475a; /* Red background for task buttons */
+    color: white; /* White text for task buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for task buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the button text */
+    font-weight: 400; /* Normal font weight */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for task buttons */
+}
+
+li button:hover {
+    background-color: #e9606e; /* Lighter red on hover */
+}
+
+li button:active {
+    background-color: #b03d4e; /* Darker red on click */
+}
+
+/* Emergency Alert and Assistance Buttons */
 .parent-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Add space between buttons */
     width: 100%;
-    max-width: 300px;
+    max-width: 300px; /* Limit the width of buttons */
     margin: 20px auto;
     padding-bottom: 20px;
 }
