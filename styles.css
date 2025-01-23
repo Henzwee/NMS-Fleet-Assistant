@@ -23,6 +23,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-weight: 700;
+    font-family: 'Kanit', sans-serif;
 }
 
 h2 {
@@ -31,6 +32,7 @@ h2 {
     color: #ffffff; /* White text */
     margin-bottom: 15px; /* Add spacing below h2 */
      font-weight: 700;
+    font-family: 'Kanit', sans-serif;
 }
 
 /* Form Styling */
