@@ -9,7 +9,6 @@ body {
     justify-content: center;
     height: 100vh;
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif; /* Ensure all pages use Kanit */
     font-weight: 400; /* Apply the linked font weights */
 }
 
@@ -23,7 +22,6 @@ h1 {
     margin: 0;
     font-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Kanit', sans-serif;
     font-weight: 700; /* Use bold styling for headers */
 }
 
