@@ -30,8 +30,8 @@
     
     <!-- Task Management Script -->
     <script>
-        const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // JSONBin URL
-        const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // API Key
+        const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // Your JSONBin URL
+        const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // Updated API Key
 
         const taskForm = document.getElementById("taskForm");
         const taskInput = document.getElementById("taskInput");
@@ -77,7 +77,7 @@
                 const li = document.createElement("li");
                 li.innerHTML = `
                     <span class="${task.done ? 'done' : ''}">${task.text}</span>
-                    <button onclick="toggleTask(${index}, ${!task.done})">${task.done ? 'Undo' : 'Done'}</button>
+                    <button onclick="deleteTask(${index})">Done</button>
                 `;
                 taskList.appendChild(li);
             });
@@ -92,14 +92,6 @@
             taskInput.value = "";
             renderTasks();
         });
-
-        // Toggle task done/undone
-        async function toggleTask(index, done) {
-            const tasks = await fetchTasks();
-            tasks[index].done = done;
-            await updateTasks(tasks);
-            renderTasks();
-        }
 
         // Delete a task
         async function deleteTask(index) {
