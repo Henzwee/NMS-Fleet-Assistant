@@ -5,7 +5,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Ensure full height for content */
+    min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
@@ -15,10 +15,9 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
-/* Apply box-sizing to all elements */
 * {
     box-sizing: border-box;
 }
@@ -42,11 +41,11 @@ h1 {
 /* Form Styling */
 form {
     background-color: #ffffff;
-    padding: 15px; /* Reduced padding */
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 500px; /* Slightly larger than task items */
+    max-width: 500px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -55,16 +54,15 @@ form {
 }
 
 input {
-    width: 90%; /* Reduce input width */
-    max-width: 400px; /* Ensure it doesn't exceed form size */
+    width: 90%;
+    max-width: 400px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
 }
 
-.button {
+button, .button {
     margin-top: 15px;
     padding: 10px 15px;
     font-size: 16px;
@@ -78,90 +76,62 @@ input {
     font-weight: 400;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    text-decoration: none; /* Remove underline */
-    width: 100%;
+    text-decoration: none;
+    align-self: center; /* Center buttons inside their containers */
+    width: auto; /* Buttons adjust width based on content */
     max-width: 300px;
 }
 
-.button:hover {
+button:hover, .button:hover {
     background-color: #e9606e;
 }
 
-.button:active {
+button:active, .button:active {
     background-color: #b03d4e;
-}
-
-
-/* Links styled as buttons */
-.button {
-    margin-top: 15px; /* Space between buttons */
-    padding: 10px 15px; /* Button padding */
-    font-size: 16px; /* Font size */
-    background-color: #cf475a; /* Red button background */
-    color: #ffffff; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-align: center; /* Center text */
-    font-family: 'Kanit', sans-serif; /* Use Kanit font */
-    font-weight: 400; /* Normal font weight */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: block; /* Make links behave like block-level buttons */
-    text-decoration: none; /* Remove underline from links */
-    width: 100%; /* Full width */
-    max-width: 300px; /* Restrict maximum width */
-}
-
-.button:hover {
-    background-color: #e9606e; /* Lighter red on hover */
-}
-
-.button:active {
-    background-color: #b03d4e; /* Darker red on click */
 }
 
 /* Task List Styling */
 ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0 auto 20px; /* Center the list horizontally and add space below */
-    width: 100%; /* Ensure full width */
-    max-width: 600px; /* Limit the list width */
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 600px;
 }
 
 li {
     display: flex;
-    justify-content: space-between; /* Space between text and button */
-    align-items: center; /* Vertically align text and button */
-    background-color: #ffffff; /* White background for the task box */
-    margin: 10px 0; /* Space between list items */
-    padding: 10px 15px; /* Padding inside the task box */
-    border-radius: 5px; /* Rounded corners for the task box */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the task box */
-    font-size: 18px; /* Text size inside the task box */
-    width: 100%; /* Ensure li doesn't overflow */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    width: 100%;
 }
 
 li span {
-    flex-grow: 1; /* Ensure the text takes up available space */
-    text-align: left; /* Align text to the left */
-    line-height: 1.5; /* Vertically align text */
-    margin-right: 15px; /* Add space between the text and the button */
+    flex-grow: 1;
+    text-align: left;
+    line-height: 1.5;
+    margin-right: 15px;
 }
 
 li button {
-    padding: 8px 12px; /* Padding for the button */
-    font-size: 14px; /* Font size */
-    background-color: #cf475a; /* Red background for task buttons */
-    color: white; /* White text for task buttons */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners for task buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    text-align: center; /* Center the button text */
-    font-weight: 400; /* Normal font weight */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for task buttons */
-    width: 70px; /* Set a fixed width for consistency */
-    flex-shrink: 0; /* Prevent the button from shrinking */
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #cf475a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70px;
+    flex-shrink: 0;
 }
 
 li button:hover {
@@ -181,7 +151,7 @@ li button:active {
     max-width: 300px;
     margin: 20px auto;
     padding-bottom: 20px;
-    text-align: center; /* Ensure container content is centered */
+    text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -191,12 +161,12 @@ li button:active {
     }
 
     ul {
-        margin: 0 auto 20px; /* Center the list horizontally */
-        width: 90%; /* Adjust width for smaller screens */
+        margin: 0 auto 20px;
+        width: 90%;
     }
 
     button, .button {
         font-size: 14px;
-        width: 90%; /* Adjust button width on smaller screens */
+        width: 90%;
     }
 }
