@@ -18,6 +18,11 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
 /* Header Styling */
 h1 {
     background-color: #cf475a;
@@ -37,23 +42,16 @@ h1 {
 /* Form Styling */
 form {
     background-color: #ffffff;
-    padding: 15px; /* Reduce padding */
+    padding: 15px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%; /* Adjust width */
-    max-width: 500px; /* Slightly larger than the to-do list items */
+    width: 90%;
+    max-width: 500px; /* Slightly larger than task items */
     text-align: center;
     display: flex;
-    flex-direction: column; /* Stack input and button vertically */
-    align-items: center; /* Center elements */
+    flex-direction: column;
+    align-items: center;
     margin: 20px auto;
-}
-
-label {
-    margin: 15px 0 5px;
-    font-size: 16px;
-    color: #333333;
-    font-weight: 400;
 }
 
 input {
@@ -66,20 +64,9 @@ input {
     box-sizing: border-box;
 }
 
-input:focus, button:focus, .button:focus {
-    outline: 2px solid #e9606e;
-    outline-offset: 2px;
-}
-
-/* Links */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Buttons */
-button, .button {
-    margin-top: 15px;
+button {
+    margin-top: 10px; /* Space between input and button */
+    width: auto; /* Allow the button to resize */
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
@@ -94,17 +81,12 @@ button, .button {
     display: inline-block;
 }
 
-button:hover, .button:hover {
+button:hover {
     background-color: #e9606e;
 }
 
-button:active, .button:active {
+button:active {
     background-color: #b03d4e;
-}
-
-input.invalid {
-    border: 2px solid #cf475a;
-    background-color: #ffe6e6;
 }
 
 /* Task List Styling */
@@ -112,7 +94,7 @@ ul {
     list-style-type: none; /* Remove default bullet points */
     padding: 0; /* Remove padding */
     margin: 0 auto 20px; /* Center the list horizontally and add space below */
-    width: 100%; /* Ensure list takes full width */
+    width: 100%; /* Ensure full width */
     max-width: 600px; /* Limit the list width */
 }
 
@@ -126,6 +108,7 @@ li {
     border-radius: 5px; /* Rounded corners for the task box */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the task box */
     font-size: 18px; /* Text size inside the task box */
+    width: 100%; /* Ensure li doesn't overflow */
 }
 
 li span {
@@ -151,13 +134,12 @@ li button {
 }
 
 li button:hover {
-    background-color: #e9606e; /* Lighter red on hover */
+    background-color: #e9606e;
 }
 
 li button:active {
-    background-color: #b03d4e; /* Darker red on click */
+    background-color: #b03d4e;
 }
-
 
 /* Emergency Alert and Assistance Buttons */
 .parent-container {
@@ -176,14 +158,13 @@ li button:active {
         padding: 20px 10px;
     }
 
-    button, .button {
-        font-size: 14px;
-        width: 90%;
-    }
-
     ul {
         margin: 0 auto 20px; /* Center the list horizontally */
         width: 90%; /* Adjust width for smaller screens */
-        max-width: none; /* Remove max-width constraint for better fit */
+    }
+
+    button {
+        font-size: 14px;
+        width: 90%; /* Adjust button width on smaller screens */
     }
 }
