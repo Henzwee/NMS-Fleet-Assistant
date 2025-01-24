@@ -144,12 +144,8 @@ li button {
     flex-shrink: 0;
 }
 
-li button:hover {
-    background-color: #e9606e;
-}
-
 li button:active {
-    background-color: #b03d4e;
+    background-color: #e9606e;
 }
 
 /* Emergency Alert and Assistance Buttons */
