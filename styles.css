@@ -64,9 +64,8 @@ input {
     box-sizing: border-box;
 }
 
-button {
-    margin-top: 10px; /* Space between input and button */
-    width: auto; /* Allow the button to resize */
+.button {
+    margin-top: 15px;
     padding: 10px 15px;
     font-size: 16px;
     background-color: #cf475a;
@@ -79,15 +78,19 @@ button {
     font-weight: 400;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    text-decoration: none; /* Remove underline */
+    width: 100%;
+    max-width: 300px;
 }
 
-button:hover {
+.button:hover {
     background-color: #e9606e;
 }
 
-button:active {
+.button:active {
     background-color: #b03d4e;
 }
+
 
 /* Links styled as buttons */
 .button {
@@ -172,12 +175,13 @@ li button:active {
 /* Emergency Alert and Assistance Buttons */
 .parent-container {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px; /* Add space between buttons */
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    max-width: 300px; /* Limit the width of buttons */
+    max-width: 300px;
     margin: 20px auto;
     padding-bottom: 20px;
+    text-align: center; /* Ensure container content is centered */
 }
 
 @media (max-width: 600px) {
