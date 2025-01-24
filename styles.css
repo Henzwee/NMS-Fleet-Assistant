@@ -15,7 +15,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 * {
@@ -39,12 +39,12 @@ h1 {
 }
 
 h2 {
-    font-family: 'Kanit', sans-serif; /* Apply Kanit font */
-    font-size: 24px; /* Adjust font size */
-    font-weight: 700; /* Bold for emphasis */
-    color: #FFFFFF; /* Use black or a dark color for visibility */
-    text-align: center; /* Center align the text */
-    margin: 20px 0; /* Add spacing around the element */
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0;
 }
 
 /* Form Styling */
@@ -71,6 +71,7 @@ input {
     border-radius: 5px;
 }
 
+/* Buttons (applies to "Add Task", "Login", etc.) */
 button, .button {
     margin-top: 15px;
     padding: 10px 15px;
@@ -85,10 +86,10 @@ button, .button {
     font-weight: 400;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
+    width: 90%; /* Center buttons on smaller screens */
+    max-width: 300px; /* Limit button width */
     align-self: center; /* Center buttons inside their containers */
-    width: auto; /* Buttons adjust width based on content */
-    max-width: 300px;
 }
 
 button:hover, .button:hover {
@@ -163,6 +164,7 @@ li button:active {
     text-align: center;
 }
 
+/* Mobile Adjustments */
 @media (max-width: 600px) {
     h1 {
         font-size: 28px;
