@@ -15,6 +15,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header Styling */
@@ -36,15 +37,15 @@ h1 {
 /* Form Styling */
 form {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px; /* Reduce padding */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 400px;
+    width: 90%; /* Adjust width */
+    max-width: 500px; /* Slightly larger than the to-do list items */
     text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center elements */
     margin: 20px auto;
 }
 
@@ -56,7 +57,8 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 90%; /* Reduce input width */
+    max-width: 400px; /* Ensure it doesn't exceed form size */
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -109,7 +111,7 @@ input.invalid {
 ul {
     list-style-type: none; /* Remove default bullet points */
     padding: 0; /* Remove padding */
-    margin: 0 0 20px; /* Add space below the task list */
+    margin: 0 auto 20px; /* Center the list horizontally and add space below */
     width: 100%; /* Ensure list takes full width */
     max-width: 600px; /* Limit the list width */
 }
