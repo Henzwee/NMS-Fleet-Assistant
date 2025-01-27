@@ -181,5 +181,11 @@ li .button-container button:active {
         font-size: 14px;
         width: 90%;
     }
+
+      h2 {
+        font-weight: 700 !important;
+        text-align: center;
+        font-size: 22px; /* Slightly smaller for better fit on mobile */
+    }
 }
 
