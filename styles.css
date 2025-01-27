@@ -80,61 +80,66 @@
             border-radius: 5px;
         }
 
-        /* Task List Styling */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0 auto 20px;
-            width: 100%;
-            max-width: 600px;
-        }
+       /* Task List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 600px;
+}
 
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            margin: 10px 0;
-            padding: 10px 15px;
-            border-radius: 5px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            font-size: 18px;
-            width: 100%;
-        }
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    width: 100%;
+}
 
-        li span {
-            flex-grow: 1;
-            text-align: left;
-            line-height: 1.5;
-            margin-right: 15px;
-        }
+/* Task Text Styling */
+li span {
+    flex-grow: 1;
+    text-align: left;
+    line-height: 1.5;
+    margin-right: 15px;
+}
 
-     /* Button Container Styling */
+/* Button Container Styling */
 li .button-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px; /* Spacing between buttons */
-    padding: 10px 0; /* Even spacing above and below the button container */
+    height: 100%; /* Align buttons evenly in the box */
+    padding: 10px 0; /* Adds even spacing above and below the buttons */
 }
 
 /* Button Styling */
 li .button-container button {
-    padding: 12px 20px; /* Larger buttons */
+    padding: 12px 20px; /* Larger button size */
     font-size: 16px; /* Slightly larger font */
     background-color: #cf475a;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly rounded corners */
     cursor: pointer;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600; /* Slightly bolder text */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width for consistent size */
+    width: 100px; /* Uniform button width */
 }
 
 li .button-container button:active {
     background-color: #b03d4e;
 }
+
 
 
         /* Emergency Alert and Assistance Buttons */
