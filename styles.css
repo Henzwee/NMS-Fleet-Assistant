@@ -1,189 +1,287 @@
-/* Import the Kanit font */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMS Fleet Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Import the Kanit font */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
-/* General Layout */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
-    background-color: #44aec4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+        /* General Layout */
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            background-color: #44aec4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
 
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* Header Styling */
-h1 {
-    background-color: #cf475a;
-    color: #ffffff;
-    width: 100%;
-    padding: 40px 0;
-    margin: 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    font-weight: 700;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+        /* Header Styling */
+        h1 {
+            background-color: #cf475a;
+            color: #ffffff;
+            width: 100%;
+            padding: 40px 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-h2 {
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #000000;
-    text-align: center;
-    margin: 20px 0;
-}
+        h2 {
+            font-family: 'Kanit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            text-align: center;
+            margin: 20px 0;
+        }
 
-/* Form Styling */
-form {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-}
+        /* Form Styling */
+        form {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+        }
 
-input {
-    width: 90%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        input {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-/* Buttons (applies to "Add Task", "Login", etc.) */
-button, .button {
-    margin-top: 15px;
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #cf475a;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 400;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    text-decoration: none; /* Remove underline */
-    width: 90%; /* Center buttons on smaller screens */
-    max-width: 300px; /* Limit button width */
-    align-self: center; /* Center buttons inside their containers */
-}
+        /* Task List Styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto 20px;
+            width: 100%;
+            max-width: 600px;
+        }
 
-button:hover, .button:hover {
-    background-color: #e9606e;
-}
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            width: 100%;
+        }
 
-button:active, .button:active {
-    background-color: #b03d4e;
-}
+        li span {
+            flex-grow: 1;
+            text-align: left;
+            line-height: 1.5;
+            margin-right: 15px;
+        }
 
-/* Task List Styling */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto 20px;
-    width: 100%;
-    max-width: 600px;
-}
+        /* Button Container Styling */
+        li .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* Equal spacing between buttons */
+            padding: 5px 0; /* Ensures even spacing above and below the button container */
+        }
 
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    margin: 10px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
-    width: 100%;
-}
+        li .button-container button {
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #cf475a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 400;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-li span {
-    flex-grow: 1;
-    text-align: left;
-    line-height: 1.5;
-    margin-right: 15px;
-}
+        li .button-container button:hover {
+            background-color: #e9606e;
+        }
 
-/* Button Container Styling */
-li .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* Equal spacing between buttons */
-    padding: 5px 0; /* Ensures even spacing above and below the button container */
-}
+        li .button-container button:active {
+            background-color: #b03d4e;
+        }
 
-li .button-container button {
-    padding: 8px 12px;
-    font-size: 14px;
-    background-color: #cf475a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 400;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+        /* Emergency Alert and Assistance Buttons */
+        .parent-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding-bottom: 20px;
+            text-align: center;
+        }
 
-li .button-container button:hover {
-    background-color: #e9606e;
-}
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+                padding: 20px 10px;
+            }
 
-li .button-container button:active {
-    background-color: #b03d4e;
-}
+            ul {
+                margin: 0 auto 20px;
+                width: 90%;
+            }
 
-/* Emergency Alert and Assistance Buttons */
-.parent-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding-bottom: 20px;
-    text-align: center;
-}
+            button, .button {
+                font-size: 14px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Chatbot Embed -->
+    <script src="https://cdn.jsdelivr.net/gh/edenai/yodabot@e4f753f/embed.js?project=57585b96-87bb-477d-8cc1-8ec08a2dde08&provider=openai&model=gpt-4&k=5&title=A.D.A.&message=A.D.A. standing by&color=rgb(207, 71, 90)"></script>
+    
+    <!-- Header -->
+    <h1>Welcome back, Drew</h1>
 
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-        padding: 20px 10px;
-    }
+    <!-- To-Do List Section -->
+    <form id="taskForm">
+        <h2>Shared To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="Add a new task..." required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul id="taskList"></ul>
 
-    ul {
-        margin: 0 auto 20px;
-        width: 90%;
-    }
+    <!-- Emergency Alert and Assistance Buttons -->
+    <div class="parent-container">
+        <a href="sms:+13177973742?body=EMERGENCY ALERT FROM DOAKLEY42. REGAIN CONTACT AND ASSIST IMMEDIATELY." class="button">Send Emergency Alert</a>
+        <a href="https://apps.apple.com/us/app/assistant-for-no-mans-sky/id1480287625" class="button">Further Assistance</a>
+    </div>
+    
+    <!-- Task Management Script -->
+    <script>
+        const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // Your JSONBin URL
+        const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // Updated API Key
 
-    button, .button {
-        font-size: 14px;
-        width: 90%;
-    }
-}
+        const taskForm = document.getElementById("taskForm");
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
+
+        async function fetchTasks() {
+            try {
+                const response = await fetch(API_URL, {
+                    headers: {
+                        "X-Master-Key": API_KEY
+                    }
+                });
+                const data = await response.json();
+                return data.record.tasks || [];
+            } catch (error) {
+                console.error("Error fetching tasks:", error);
+                return [];
+            }
+        }
+
+        async function updateTasks(tasks) {
+            try {
+                await fetch(API_URL, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Master-Key": API_KEY
+                    },
+                    body: JSON.stringify({ tasks })
+                });
+            } catch (error) {
+                console.error("Error updating tasks:", error);
+            }
+        }
+
+        async function renderTasks() {
+            const tasks = await fetchTasks();
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span class="${task.done ? 'done' : ''}">${task.text}</span>
+                    <div class="button-container">
+                        <button onclick="editTask(${index}, '${task.text}')">Edit</button>
+                        <button onclick="deleteTask(${index})">Done</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        taskForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const tasks = await fetchTasks();
+            tasks.push({ text: taskInput.value, done: false });
+            await updateTasks(tasks);
+            taskInput.value = "";
+            renderTasks();
+        });
+
+        async function editTask(index, currentText) {
+            const tasks = await fetchTasks();
+            const li = taskList.children[index];
+            li.innerHTML = `
+                <input type="text" value="${currentText}" id="editInput${index}" />
+                <div class="button-container">
+                    <button onclick="saveEdit(${index})">Save</button>
+                    <button onclick="renderTasks()">Cancel</button>
+                </div>
+            `;
+        }
+
+        async function saveEdit(index) {
+            const tasks = await fetchTasks();
+            const editInput = document.getElementById(`editInput${index}`);
+            tasks[index].text = editInput.value;
+            await updateTasks(tasks);
+            renderTasks();
+        }
+
+        async function deleteTask(index) {
+            const tasks = await fetchTasks();
+            tasks.splice(index, 1);
+            await updateTasks(tasks);
+            renderTasks();
+        }
+
+        renderTasks();
+    </script>
+</body>
+</html>
