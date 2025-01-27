@@ -29,7 +29,7 @@
     </div>
     
     <!-- Task Management Script -->
-    <script>
+     <script>
         const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // Your JSONBin URL
         const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // Updated API Key
 
@@ -77,6 +77,7 @@
                 const li = document.createElement("li");
                 li.innerHTML = `
                     <span class="${task.done ? 'done' : ''}">${task.text}</span>
+                    <button onclick="editTask(${index}, '${task.text}')">Edit</button>
                     <button onclick="deleteTask(${index})">Done</button>
                 `;
                 taskList.appendChild(li);
@@ -92,6 +93,28 @@
             taskInput.value = "";
             renderTasks();
         });
+
+        // Edit a task
+        async function editTask(index, currentText) {
+            const tasks = await fetchTasks();
+            const li = taskList.children[index];
+            
+            // Replace the task text with an input field
+            li.innerHTML = `
+                <input type="text" value="${currentText}" id="editInput${index}" />
+                <button onclick="saveEdit(${index})">Save</button>
+                <button onclick="renderTasks()">Cancel</button>
+            `;
+        }
+
+        // Save edited task
+        async function saveEdit(index) {
+            const tasks = await fetchTasks();
+            const editInput = document.getElementById(`editInput${index}`);
+            tasks[index].text = editInput.value; // Update task text
+            await updateTasks(tasks);
+            renderTasks();
+        }
 
         // Delete a task
         async function deleteTask(index) {
