@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Import the Kanit font */
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+        /* Inline styling for simplicity */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .button-container button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .button-container button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <!-- Chatbot Embed -->
@@ -40,6 +61,7 @@
         const taskInput = document.getElementById("taskInput");
         const taskList = document.getElementById("taskList");
 
+        // Fetch tasks from JSONBin
         async function fetchTasks() {
             try {
                 const response = await fetch(API_URL, {
@@ -55,6 +77,7 @@
             }
         }
 
+        // Update tasks in JSONBin
         async function updateTasks(tasks) {
             try {
                 await fetch(API_URL, {
@@ -70,6 +93,7 @@
             }
         }
 
+        // Render tasks in the list
         async function renderTasks() {
             const tasks = await fetchTasks();
             taskList.innerHTML = "";
@@ -86,6 +110,7 @@
             });
         }
 
+        // Add a new task
         taskForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             const tasks = await fetchTasks();
@@ -95,9 +120,12 @@
             renderTasks();
         });
 
+        // Edit a task
         async function editTask(index, currentText) {
             const tasks = await fetchTasks();
             const li = taskList.children[index];
+            
+            // Replace the task text with an input field
             li.innerHTML = `
                 <input type="text" value="${currentText}" id="editInput${index}" />
                 <div class="button-container">
@@ -107,14 +135,16 @@
             `;
         }
 
+        // Save edited task
         async function saveEdit(index) {
             const tasks = await fetchTasks();
             const editInput = document.getElementById(`editInput${index}`);
-            tasks[index].text = editInput.value;
+            tasks[index].text = editInput.value; // Update task text
             await updateTasks(tasks);
             renderTasks();
         }
 
+        // Delete a task
         async function deleteTask(index) {
             const tasks = await fetchTasks();
             tasks.splice(index, 1);
@@ -122,6 +152,7 @@
             renderTasks();
         }
 
+        // Initial render
         renderTasks();
     </script>
 </body>
