@@ -109,34 +109,33 @@
             margin-right: 15px;
         }
 
-        /* Button Container Styling */
-        li .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 5px; /* Equal spacing between buttons */
-            padding: 5px 0; /* Ensures even spacing above and below the button container */
-        }
+     /* Button Container Styling */
+li .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between buttons */
+    padding: 10px 0; /* Even spacing above and below the button container */
+}
 
-        li .button-container button {
-            padding: 8px 12px;
-            font-size: 14px;
-            background-color: #cf475a;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            font-weight: 400;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* Button Styling */
+li .button-container button {
+    padding: 12px 20px; /* Larger buttons */
+    font-size: 16px; /* Slightly larger font */
+    background-color: #cf475a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for consistent size */
+}
 
-        li .button-container button:hover {
-            background-color: #e9606e;
-        }
+li .button-container button:active {
+    background-color: #b03d4e;
+}
 
-        li .button-container button:active {
-            background-color: #b03d4e;
-        }
 
         /* Emergency Alert and Assistance Buttons */
         .parent-container {
