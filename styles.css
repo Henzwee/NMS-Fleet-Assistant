@@ -129,7 +129,15 @@ li span {
     margin-right: 15px;
 }
 
-li button {
+/* Button Container Styling */
+li .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Equal spacing between buttons */
+    padding: 5px 0; /* Ensures even spacing above and below the button container */
+}
+
+li .button-container button {
     padding: 8px 12px;
     font-size: 14px;
     background-color: #cf475a;
@@ -140,12 +148,14 @@ li button {
     text-align: center;
     font-weight: 400;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 70px;
-    flex-shrink: 0;
 }
 
-li button:active {
+li .button-container button:hover {
     background-color: #e9606e;
+}
+
+li .button-container button:active {
+    background-color: #b03d4e;
 }
 
 /* Emergency Alert and Assistance Buttons */
