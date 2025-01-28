@@ -70,28 +70,25 @@ input {
     border-radius: 5px;
 }
 
-/* Buttons (applies to Add Task, Alert, Info, etc.) */
-button, .button {
-    margin-top: 15px;
-    padding: 12px 20px; /* Larger buttons */
+/* Buttons (unified style) */
+button, .button, li .button-container button {
+    padding: 12px 20px; /* Consistent button size */
     font-size: 16px;
     background-color: #cf475a;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
     font-family: 'Kanit', sans-serif;
     font-weight: 700;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    text-align: center;
     text-decoration: none; /* Remove underline */
-    width: 90%; /* Center buttons on smaller screens */
-    max-width: 300px; /* Limit button width */
-    align-self: center; /* Center buttons inside their containers */
+    max-width: 300px; /* Limit button width for uniformity */
+    align-self: center;
 }
 
-button:active, .button:active {
+button:active, .button:active, li .button-container button:active {
     background-color: #b03d4e; /* Darker shade for active state */
 }
 
@@ -127,30 +124,14 @@ li span {
 /* Button Container Styling */
 li .button-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row; /* Arrange buttons horizontally */
     gap: 10px; /* Spacing between buttons */
-    height: 100%; /* Align buttons evenly in the box */
-    padding: 10px 0; /* Adds even spacing above and below the buttons */
+    align-items: center; /* Center buttons vertically */
 }
 
 li .button-container button {
-    padding: 12px 20px; /* Larger button size */
-    font-size: 16px;
-    background-color: #cf475a;
-    color: white;
-    border: none;
-    border-radius: 8px; /* Slightly rounded corners */
-    cursor: pointer;
-    text-align: center;
-    font-weight: 700;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100px; /* Uniform button width */
-}
-
-li .button-container button:active {
-    background-color: #b03d4e; /* Darker shade for active state */
+    width: auto; /* Adjust to content */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 /* Emergency Alert and Assistance Buttons */
@@ -182,10 +163,9 @@ li .button-container button:active {
         width: 90%;
     }
 
-      h2 {
+    h2 {
         font-weight: 700 !important;
         text-align: center;
         font-size: 22px; /* Slightly smaller for better fit on mobile */
     }
 }
-
