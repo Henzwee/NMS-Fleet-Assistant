@@ -76,7 +76,6 @@ form {
 button, .button, li .button-container button {
     padding: 12px 20px;
     font-size: 16px; /* Matches "Add Task" button */
-    font-weight: 700;
     background-color: #cf475a;
     color: #ffffff;
     border: none;
@@ -86,9 +85,8 @@ button, .button, li .button-container button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    width: 100%; /* Buttons take full width */
-    max-width: 250px; /* Prevent overly wide buttons */
-    align-self: center;
+    width: 120px; /* Consistent button size */
+    max-width: 150px; /* Prevent overly wide buttons */
 }
 
 button:active, .button:active, li .button-container button:active {
@@ -104,11 +102,11 @@ ul {
     max-width: 600px;
 }
 
+/* To-Do List Item */
 li {
     display: flex;
-    flex-direction: column; /* Stack text and buttons naturally */
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between; /* Text on the left, buttons on the right */
+    align-items: center; /* Center everything vertically */
     background-color: #ffffff;
     margin: 10px 0;
     padding: 15px 20px;
@@ -118,21 +116,21 @@ li {
     width: 100%;
 }
 
-/* Ensure task text is centered and readable */
+/* Ensure task text stays aligned left */
 li span {
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
     line-height: 1.5;
     word-wrap: break-word;
-    margin-bottom: 10px; /* Adds space between text and buttons */
+    margin-right: 15px; /* Space between text and buttons */
 }
 
-/* Button Container Styling */
+/* Button Container: Keep buttons on the right */
 li .button-container {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
-    gap: 5px; /* Ensure even spacing between buttons */
-    align-items: center;
+    gap: 5px; /* Space between buttons */
+    align-items: flex-end; /* Align buttons to the right */
 }
 
 /* Emergency Alert and Assistance Buttons */
@@ -168,5 +166,14 @@ li .button-container {
         font-weight: 700 !important;
         text-align: center;
         font-size: 22px; /* Slightly smaller for better fit on mobile */
+    }
+
+    /* Keep buttons on the right for mobile too */
+    li {
+        flex-direction: row; /* Ensure text and buttons stay in a row */
+    }
+
+    li .button-container {
+        align-items: flex-end;
     }
 }
