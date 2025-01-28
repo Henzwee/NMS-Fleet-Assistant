@@ -61,30 +61,33 @@ form {
     margin: 20px auto;
 }
 
-input {
+/* Input field spacing */
+#taskInput {
     width: 90%;
     max-width: 400px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px; /* Adds space between input and button */
 }
 
-/* Buttons (unified style) */
+/* Buttons (unified style across all buttons) */
 button, .button, li .button-container button {
-    padding: 12px 20px; /* Consistent button size */
-    font-size: 16px;
+    padding: 12px 20px;
+    font-size: 16px; /* Matches "Add Task" button */
+    font-weight: 700;
     background-color: #cf475a;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Kanit', sans-serif;
-    font-weight: 700;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    text-decoration: none; /* Remove underline */
-    max-width: 300px; /* Limit button width for uniformity */
+    text-decoration: none;
+    width: 100%; /* Buttons take full width */
+    max-width: 250px; /* Prevent overly wide buttons */
     align-self: center;
 }
 
@@ -103,7 +106,8 @@ ul {
 
 li {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack text and buttons naturally */
+    justify-content: center;
     align-items: center;
     background-color: #ffffff;
     margin: 10px 0;
@@ -114,24 +118,21 @@ li {
     width: 100%;
 }
 
+/* Ensure task text is centered and readable */
 li span {
     flex-grow: 1;
-    text-align: left;
+    text-align: center;
     line-height: 1.5;
-    margin-right: 15px;
+    word-wrap: break-word;
+    margin-bottom: 10px; /* Adds space between text and buttons */
 }
 
 /* Button Container Styling */
 li .button-container {
     display: flex;
-    flex-direction: row; /* Arrange buttons horizontally */
-    gap: 10px; /* Spacing between buttons */
-    align-items: center; /* Center buttons vertically */
-}
-
-li .button-container button {
-    width: auto; /* Adjust to content */
-    flex-shrink: 0; /* Prevent buttons from shrinking */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 5px; /* Ensure even spacing between buttons */
+    align-items: center;
 }
 
 /* Emergency Alert and Assistance Buttons */
