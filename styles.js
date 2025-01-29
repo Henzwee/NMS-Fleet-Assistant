@@ -64,14 +64,22 @@ taskForm.addEventListener("submit", async (e) => {
     renderTasks();
 });
 
-// Edit a task
 async function editTask(index, currentText) {
     const tasks = await fetchTasks();
+    const currentIcon = tasks[index].icon; // Get current icon
     const li = taskList.children[index];
-    
-    // Replace the task text with an input field
+
+    // Replace task text with an input field and icon selector
     li.innerHTML = `
-        <input type="text" value="${currentText}" id="editInput${index}" />
+        <select id="editIcon${index}">
+            <option value="bi-rocket-fill" ${currentIcon === "bi-rocket-fill" ? "selected" : ""}>🚀 Starship</option>
+            <option value="bi-activity" ${currentIcon === "bi-activity" ? "selected" : ""}>🦾 Exosuit</option>
+            <option value="bi-building-fill" ${currentIcon === "bi-building-fill" ? "selected" : ""}>🏠 Base</option>
+            <option value="bi-currency-dollar" ${currentIcon === "bi-currency-dollar" ? "selected" : ""}>💰 Money</option>
+        </select>
+        
+        <input type="text" value="${currentText}" id="editInput${index}" class="edit-input" />
+        
         <div class="button-container">
             <button onclick="saveEdit(${index})">Save</button>
             <button onclick="renderTasks()">Cancel</button>
@@ -79,11 +87,14 @@ async function editTask(index, currentText) {
     `;
 }
 
-// Save edited task
 async function saveEdit(index) {
     const tasks = await fetchTasks();
     const editInput = document.getElementById(`editInput${index}`);
+    const editIcon = document.getElementById(`editIcon${index}`);
+
     tasks[index].text = editInput.value; // Update task text
+    tasks[index].icon = editIcon.value; // Update selected icon
+
     await updateTasks(tasks);
     renderTasks();
 }
