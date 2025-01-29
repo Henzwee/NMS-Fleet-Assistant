@@ -95,10 +95,24 @@ button, .button, li .button-container button {
     max-width: 150px;
 }
 
-/* Ensure "Save" and "Cancel" buttons match "Edit" and "Done" */
 li .button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 120px;
     height: 40px; /* Ensures consistency across all buttons */
+    padding: 12px 20px; /* Keeps proper button spacing */
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #cf475a;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
 }
 
 button:active, .button:active, li .button-container button:active {
