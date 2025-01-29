@@ -178,6 +178,16 @@ li .button-container {
     max-width: 250px; /* Ensure buttons are equal width */
 }
 
+#taskType, .edit-input, select[id^="editIcon"] {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     h1 {
