@@ -62,7 +62,7 @@ form {
 }
 
 /* Input field spacing */
-#taskInput {
+#taskInput, #passwordInput {
     width: 90%;
     max-width: 400px;
     padding: 10px;
@@ -76,6 +76,7 @@ form {
 button, .button, li .button-container button {
     padding: 12px 20px;
     font-size: 16px; /* Matches "Add Task" button */
+    font-weight: 700;
     background-color: #cf475a;
     color: #ffffff;
     border: none;
@@ -85,8 +86,9 @@ button, .button, li .button-container button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    width: 120px; /* Consistent button size */
-    max-width: 150px; /* Prevent overly wide buttons */
+    width: 100%; /* Buttons take full width */
+    max-width: 250px; /* Prevent overly wide buttons */
+    align-self: center;
 }
 
 button:active, .button:active, li .button-container button:active {
@@ -133,16 +135,22 @@ li .button-container {
     align-items: flex-end; /* Align buttons to the right */
 }
 
-/* Emergency Alert and Assistance Buttons */
+/* Emergency Alert and More Info Buttons */
 .parent-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
     width: 100%;
-    max-width: 300px;
+    max-width: 300px; /* Ensures buttons remain the same width */
     margin: 20px auto;
     padding-bottom: 20px;
     text-align: center;
+}
+
+.parent-container a {
+    width: 100%;
+    max-width: 250px; /* Ensure buttons are equal width */
 }
 
 /* Mobile Adjustments */
