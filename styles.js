@@ -37,13 +37,13 @@ async function updateTasks(tasks) {
     }
 }
 
-// Render tasks in the list
 async function renderTasks() {
     const tasks = await fetchTasks();
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
+            <i class="bi ${task.icon}" style="font-size: 1.5rem; margin-right: 10px;"></i>
             <span class="${task.done ? 'done' : ''}">${task.text}</span>
             <div class="button-container">
                 <button onclick="editTask(${index}, '${task.text}')">Edit</button>
