@@ -61,21 +61,26 @@ form {
     margin: 20px auto;
 }
 
-/* Input field spacing */
-#taskInput, #passwordInput {
+/* Ensure all input fields match the "Add Task" size */
+input, .edit-input {
     width: 90%;
     max-width: 400px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px; /* Adds space between input and button */
+    margin-bottom: 10px; /* Ensures uniform spacing below inputs */
+}
+
+/* Ensure proper spacing for login button */
+#passwordInput {
+    margin-bottom: 10px; /* Matches "Add Task" button spacing */
 }
 
 /* Buttons (unified style across all buttons) */
 button, .button, li .button-container button {
     padding: 12px 20px;
-    font-size: 16px; /* Matches "Add Task" button */
+    font-size: 16px;
     font-weight: 700;
     background-color: #cf475a;
     color: #ffffff;
@@ -86,9 +91,14 @@ button, .button, li .button-container button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    width: 100%; /* Buttons take full width */
-    max-width: 250px; /* Prevent overly wide buttons */
-    align-self: center;
+    width: 120px; /* Standardized button size */
+    max-width: 150px;
+}
+
+/* Ensure "Save" and "Cancel" buttons match "Edit" and "Done" */
+li .button-container button {
+    width: 120px;
+    height: 40px; /* Ensures consistency across all buttons */
 }
 
 button:active, .button:active, li .button-container button:active {
@@ -135,7 +145,7 @@ li .button-container {
     align-items: flex-end; /* Align buttons to the right */
 }
 
-/* Emergency Alert and More Info Buttons */
+/* Emergency Alert and Assistance Buttons */
 .parent-container {
     display: flex;
     flex-direction: column;
