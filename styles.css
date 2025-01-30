@@ -42,14 +42,14 @@ h2 {
 
 h3 {
     text-align: center;
-    margin: 0 auto; /* Centers the text */
-    font-size: 30px; /* Slightly smaller than h1 for better fit */
+    margin: 0;
+    font-size: 30px; /* Adjusted size */
     font-weight: 700;
     color: #ffffff;
-    width: fit-content; /* Prevents it from stretching too wide */
-    padding: 10px 20px; /* Matches the padding of h1 without extra width */
-    background-color: #cf475a; /* Same background color */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Keeps the drop shadow */
+    width: 100%; /* Ensures background spans full width */
+    padding: 20px 0; /* Matches h1 padding */
+    background-color: #cf475a; /* Same as h1 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Same drop shadow */
 }
 
 /* Form Styling */
