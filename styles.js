@@ -67,25 +67,29 @@ taskForm.addEventListener("submit", async (e) => {
 
 async function editTask(index, currentText) {
     const tasks = await fetchTasks();
-    const li = taskList.children[index];
+    const taskId = tasks[index].id;  // Store the ID of the task
+    const li = taskList.querySelectorAll("li")[index];
 
     li.innerHTML = `
-        <input type="text" value="${currentText}" id="editInput${index}" class="edit-input" />
+        <input type="text" value="${currentText}" id="editInput${taskId}" class="edit-input" />
         <div class="button-container">
-            <button onclick="saveEdit(${index})">Save</button>
+            <button onclick="saveEdit(${taskId})">Save</button>
             <button onclick="renderTasks()">Cancel</button>
         </div>
     `;
 }
 
-async function saveEdit(index) {
-    let tasks = await fetchTasks(); // Ensure we fetch the latest version from JSONBin
-    const editInput = document.getElementById(`editInput${index}`);
+async function saveEdit(taskId) {
+    const tasks = await fetchTasks();
+    const taskIndex = tasks.findIndex(task => task.id === taskId); // Find correct task
 
-    tasks[index].text = editInput.value;
+    if (taskIndex === -1) return; // Prevent errors
+
+    const editInput = document.getElementById(`editInput${taskId}`);
+    tasks[taskIndex].text = editInput.value;
 
     await updateTasks(tasks);
-    renderTasks(); // Refresh UI
+    renderTasks();
 }
 
 // Delete a task
