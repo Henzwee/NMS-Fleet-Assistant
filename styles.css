@@ -178,23 +178,6 @@ li .button-container {
     max-width: 250px; /* Ensure buttons are equal width */
 }
 
-.header-container {
-    display: flex;
-    align-items: center; /* Align images and text vertically */
-    justify-content: center; /* Center the text horizontally */
-    width: 100%; /* Make the header full-width */
-    background-color: #cf475a; /* Match the header background */
-    padding: 15px 0; /* Adjust padding as needed */
-    position: relative; /* Ensure it spans full width */
-}
-
-.logo {
-    height: 50px; /* Adjust as needed */
-    width: auto;
-    max-width: 100px; /* Prevents oversized logos */
-    padding: 0 15px; /* Adds space between the logo and text */
-}
-
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     h1 {
