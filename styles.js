@@ -59,7 +59,15 @@ async function renderTasks() {
 taskForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const tasks = await fetchTasks();
-    tasks.push({ text: taskInput.value, done: false });
+
+    // Assign a unique ID using timestamp
+    const newTask = {
+        id: Date.now(), // Creates a unique identifier
+        text: taskInput.value,
+        done: false
+    };
+
+    tasks.push(newTask);
     await updateTasks(tasks);
     taskInput.value = "";
     renderTasks();
