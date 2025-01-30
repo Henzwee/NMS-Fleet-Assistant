@@ -180,24 +180,20 @@ li .button-container {
 
 .header-container {
     display: flex;
-    align-items: center; /* Keeps text and images aligned vertically */
-    justify-content: space-between; /* Positions logos at each end */
-    width: 100%;
-    padding: 10px 0;
-}
-
-h1 {
-    flex-grow: 1; /* Ensures the text remains centered */
-    text-align: center; /* Centers the text itself */
-    margin: 0; /* Prevents unwanted spacing */
+    align-items: center; /* Align images and text vertically */
+    justify-content: center; /* Center the text horizontally */
+    width: 100%; /* Make the header full-width */
+    background-color: #cf475a; /* Match the header background */
+    padding: 15px 0; /* Adjust padding as needed */
+    position: relative; /* Ensure it spans full width */
 }
 
 .logo {
     height: 50px; /* Adjust as needed */
     width: auto;
     max-width: 100px; /* Prevents oversized logos */
+    padding: 0 15px; /* Adds space between the logo and text */
 }
-
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
