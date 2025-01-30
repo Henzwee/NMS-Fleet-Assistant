@@ -100,7 +100,7 @@ li .button-container button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
+    width: 100px;
     height: 40px; /* Ensures consistency across all buttons */
     padding: 12px 20px; /* Keeps proper button spacing */
     font-size: 16px;
