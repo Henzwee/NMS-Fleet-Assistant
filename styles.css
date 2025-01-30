@@ -183,7 +183,6 @@ li .button-container {
     justify-content: center; /* Centers text horizontally */
     align-items: center; /* Aligns text and image vertically */
     gap: 10px; /* Adds space between text and logo */
-    text-align: center; /* Ensures text stays centered */
     width: 100%;
 }
 
