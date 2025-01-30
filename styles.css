@@ -177,6 +177,18 @@ li .button-container {
     max-width: 250px; /* Ensure buttons are equal width */
 }
 
+.header-container {
+    display: flex;
+    align-items: center; /* Aligns logo and text vertically */
+    justify-content: center;
+    gap: 15px; /* Space between logo and text */
+}
+
+.logo {
+    height: 50px; /* Slightly larger than the text */
+    width: auto;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     h1 {
