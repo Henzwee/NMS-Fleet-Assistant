@@ -174,20 +174,18 @@ li .button-container {
 
 .header-container {
     display: flex;
-    align-items: center; /* Align images and text vertically */
-    justify-content: center; /* Keeps everything centered */
+    align-items: center; /* Aligns text and images vertically */
+    justify-content: space-between; /* Keeps text centered, images closer */
     width: 100%; /* Full-width background */
     background-color: #cf475a; /* Header background */
-    padding: 10px 0; /* Keeps spacing consistent */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow covers full header */
-    gap: 10px; /* Controls spacing between images and text */
+    padding: 10px 30px; /* Adds space on both sides to bring images inward */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Keeps shadow across full header */
 }
 
 .logo {
     height: 50px; /* Adjust as needed */
     width: auto;
-    max-width: 80px; /* Keep logos smaller to bring them closer */
-    margin: 0 10px; /* Reduce side margins */
+    max-width: 80px; /* Prevents logos from being too large */
 }
 
 /* Mobile Adjustments */
