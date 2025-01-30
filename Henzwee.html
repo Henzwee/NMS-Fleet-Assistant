@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NMS Fleet Assistant</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Chatbot Embed -->
     <script src="https://cdn.jsdelivr.net/gh/edenai/yodabot@e4f753f/embed.js?project=57585b96-87bb-477d-8cc1-8ec08a2dde08&provider=openai&model=gpt-4&k=5&title=A.D.A.&message=A.D.A. standing by&color=rgb(207, 71, 90)"></script>
@@ -16,18 +20,24 @@
     <h1>Welcome back, Captain</h1>
 
     <!-- To-Do List Section -->
-    <form id="taskForm">
+<!-- To-Do List Section -->
+<form id="taskForm" class="d-flex align-items-center">
     <h2>Shared To-Do List</h2>
-    
-    <!-- Task Type Selector -->
-    <select id="taskType">
-        <option value="bi-rocket-fill">Starship</option>
-        <option value="bi-activity">Exosuit</option>
-        <option value="bi-building-fill">Base</option>
-        <option value="bi-currency-dollar">Profit</option>
-    </select>
 
-    <input type="text" id="taskInput" placeholder="Add a new task..." required>
+    <div class="task-input-container">
+        <!-- Task Icon Dropdown -->
+        <select id="taskType" class="icon-dropdown">
+            <option value="bi-question-lg" selected></option> 
+            <option value="bi-rocket-fill"></option>
+            <option value="bi-activity"></option>
+            <option value="bi-building-fill"></option>
+            <option value="bi-currency-dollar"></option>
+        </select>
+
+        <!-- Task Text Input -->
+        <input type="text" id="taskInput" placeholder="Add a new task..." required>
+    </div>
+
     <button type="submit">Add Task</button>
 </form>
 
