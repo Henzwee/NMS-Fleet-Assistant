@@ -23,18 +23,12 @@ html, body {
 
 /* Header Styling */
 h1 {
-    background-color: #cf475a;
-    color: #ffffff;
-    width: 100%;
-    padding: 40px 0;
-    margin: 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    font-weight: 700;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex-grow: 1; /* Ensures text remains centered */
+    text-align: center; /* Keeps text aligned in the middle */
+    margin: 0; /* Prevents unwanted spacing */
+    font-size: 36px; /* Keep your existing font size */
+    font-weight: 700; /* Keep your bold text */
+    color: #ffffff; /* Ensure text color stays white */
 }
 
 h2 {
@@ -176,6 +170,22 @@ li .button-container {
 .parent-container a {
     width: 100%;
     max-width: 250px; /* Ensure buttons are equal width */
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* Align images and text vertically */
+    justify-content: space-between; /* Keeps text centered, images on the sides */
+    width: 100%; /* Ensures full width */
+    background-color: #cf475a; /* Keeps existing background color */
+    padding: 10px 0; /* Keeps spacing consistent */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds drop shadow */
+}
+
+.logo {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    max-width: 100px; /* Prevents oversized logos */
 }
 
 /* Mobile Adjustments */
