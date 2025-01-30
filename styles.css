@@ -92,7 +92,7 @@ button, .button, li .button-container button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    width: 120px; /* Standardized button size */
+    width: 100px; /* Standardized button size */
     max-width: 150px;
 }
 
