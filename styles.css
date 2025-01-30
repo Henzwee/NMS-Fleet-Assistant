@@ -180,13 +180,15 @@ li .button-container {
 
 .header-container {
     display: flex;
-    align-items: center; /* Keeps the image and text aligned vertically */
-    justify-content: center; /* Centers the whole header */
-    gap: 15px; /* Adds space between the logo and the text */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Aligns text and image vertically */
+    gap: 10px; /* Adds space between text and logo */
+    text-align: center; /* Ensures text stays centered */
+    width: 100%;
 }
 
 .logo {
-    height: 55px; /* Adjust size to be slightly larger than the text */
+    height: 50px; /* Adjust as needed */
     width: auto;
 }
 
