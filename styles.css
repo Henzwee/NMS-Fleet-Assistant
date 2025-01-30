@@ -48,6 +48,7 @@ h2 {
 
 /* Form Styling */
 form {
+    font-family: 'Kanit', sans-serif;
     background-color: #ffffff;
     padding: 15px;
     border-radius: 10px;
