@@ -94,8 +94,8 @@ async function saveEdit(index) {
     const editInput = document.getElementById(`editInput${index}`);
     const editIcon = document.getElementById(`editIcon${index}`);
 
-    tasks[index].text = editInput.value; // Update task text
-    tasks[index].icon = editIcon.value; // Update selected icon
+    tasks[index].text = editInput.value;
+    tasks[index].icon = editIcon.value;
 
     await updateTasks(tasks);
     renderTasks();
