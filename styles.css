@@ -9,7 +9,6 @@ html, body {
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
-    font-family: 'Kanit', sans-serif;
     background-color: #44aec4; /* Blue background */
     display: flex;
     flex-direction: column;
@@ -176,33 +175,6 @@ li .button-container {
 .parent-container a {
     width: 100%;
     max-width: 250px; /* Ensure buttons are equal width */
-}
-
-#taskType, .edit-input, select[id^="editIcon"] {
-    width: 100%;
-    max-width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.task-input-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between dropdown and text input */
-}
-
-.icon-dropdown {
-    width: 50px; /* Small box */
-    height: 40px;
-    background-color: white;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-size: 18px;
-    padding: 5px;
-    cursor: pointer;
 }
 
 /* Mobile Adjustments */
