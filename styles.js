@@ -13,7 +13,7 @@ const users = {
 
 // Handle the login process
 function login(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent form submission
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
@@ -28,13 +28,21 @@ function login(event) {
         usernameField.classList.add("invalid");
         passwordField.classList.add("invalid");
 
-        // Optionally, add a timeout to remove the invalid class
+        // Remove the invalid highlight after 2 seconds
         setTimeout(() => {
             usernameField.classList.remove("invalid");
             passwordField.classList.remove("invalid");
         }, 2000);
     }
 }
+
+// Ensure login script runs after page loads
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", login);
+    }
+});
 
 // Fetch tasks from JSONBin
 async function fetchTasks() {
@@ -124,14 +132,6 @@ async function deleteTask(index) {
     await updateTasks(tasks);
     renderTasks();
 }
-
-// Ensure login script runs after page loads
-document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.querySelector("form");
-    if (loginForm) {
-        loginForm.addEventListener("submit", login);
-    }
-});
 
 // Initial render
 renderTasks();
