@@ -23,12 +23,12 @@ html, body {
 
 /* Header Styling */
 h1 {
-    flex-grow: 1; /* Ensures text remains centered */
-    text-align: center; /* Keeps text aligned in the middle */
-    margin: 0; /* Prevents unwanted spacing */
-    font-size: 36px; /* Keep your existing font size */
-    font-weight: 700; /* Keep your bold text */
-    color: #ffffff; /* Ensure text color stays white */
+    flex-grow: 0; /* Ensures text doesn’t stretch */
+    text-align: center;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 h2 {
@@ -175,17 +175,19 @@ li .button-container {
 .header-container {
     display: flex;
     align-items: center; /* Align images and text vertically */
-    justify-content: space-between; /* Keeps text centered, images on the sides */
-    width: 100%; /* Ensures full width */
-    background-color: #cf475a; /* Keeps existing background color */
+    justify-content: center; /* Keeps everything centered */
+    width: 100%; /* Full-width background */
+    background-color: #cf475a; /* Header background */
     padding: 10px 0; /* Keeps spacing consistent */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds drop shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow covers full header */
+    gap: 10px; /* Controls spacing between images and text */
 }
 
 .logo {
     height: 50px; /* Adjust as needed */
     width: auto;
-    max-width: 100px; /* Prevents oversized logos */
+    max-width: 80px; /* Keep logos smaller to bring them closer */
+    margin: 0 10px; /* Reduce side margins */
 }
 
 /* Mobile Adjustments */
