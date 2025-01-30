@@ -180,16 +180,24 @@ li .button-container {
 
 .header-container {
     display: flex;
-    justify-content: center; /* Centers text horizontally */
-    align-items: center; /* Aligns text and image vertically */
-    gap: 10px; /* Adds space between text and logo */
+    align-items: center; /* Keeps text and images aligned vertically */
+    justify-content: space-between; /* Positions logos at each end */
     width: 100%;
+    padding: 10px 0;
+}
+
+h1 {
+    flex-grow: 1; /* Ensures the text remains centered */
+    text-align: center; /* Centers the text itself */
+    margin: 0; /* Prevents unwanted spacing */
 }
 
 .logo {
     height: 50px; /* Adjust as needed */
     width: auto;
+    max-width: 100px; /* Prevents oversized logos */
 }
+
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
