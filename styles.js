@@ -23,6 +23,7 @@ async function fetchTasks() {
 
 // Update tasks in JSONBin
 async function updateTasks(tasks) {
+    console.log("Updating tasks:", tasks); // Debugging line
     try {
         await fetch(API_URL, {
             method: "PUT",
@@ -41,11 +42,12 @@ async function renderTasks() {
     const tasks = await fetchTasks();
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
+        const safeText = task.text.replace(/'/g, "&apos;"); // Escape single quotes
         const li = document.createElement("li");
         li.innerHTML = `
-            <span class="${task.done ? 'done' : ''}">${task.text}</span>
+            <span class="${task.done ? 'done' : ''}">${safeText}</span>
             <div class="button-container">
-                <button onclick="editTask(${index}, '${task.text}')">Edit</button>
+                <button onclick="editTask(${index}, '${safeText}')">Edit</button>
                 <button onclick="deleteTask(${index})">Done</button>
             </div>
         `;
@@ -77,13 +79,13 @@ async function editTask(index, currentText) {
 }
 
 async function saveEdit(index) {
-    const tasks = await fetchTasks();
+    let tasks = await fetchTasks(); // Ensure we fetch the latest version from JSONBin
     const editInput = document.getElementById(`editInput${index}`);
 
     tasks[index].text = editInput.value;
 
     await updateTasks(tasks);
-    renderTasks();
+    renderTasks(); // Refresh UI
 }
 
 // Delete a task
