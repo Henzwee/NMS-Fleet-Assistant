@@ -190,7 +190,7 @@ li .button-container {
     justify-content: space-between; /* Keeps text centered, images closer */
     width: 100%; /* Full-width background */
     background-color: #cf475a; /* Header background */
-    padding: 10px 350px; /* Adds space on both sides to bring images inward */
+    padding: 10px 400px; /* Adds space on both sides to bring images inward */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Keeps shadow across full header */
 }
 
