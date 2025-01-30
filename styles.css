@@ -188,6 +188,23 @@ li .button-container {
     margin-bottom: 10px;
 }
 
+.task-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between dropdown and text input */
+}
+
+.icon-dropdown {
+    width: 50px; /* Small box */
+    height: 40px;
+    background-color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     h1 {
