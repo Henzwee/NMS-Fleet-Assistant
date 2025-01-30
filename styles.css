@@ -179,13 +179,13 @@ li .button-container {
 
 .header-container {
     display: flex;
-    align-items: center; /* Aligns logo and text vertically */
-    justify-content: center;
-    gap: 15px; /* Space between logo and text */
+    align-items: center; /* Keeps the image and text aligned vertically */
+    justify-content: center; /* Centers the whole header */
+    gap: 15px; /* Adds space between the logo and the text */
 }
 
 .logo {
-    height: 50px; /* Slightly larger than the text */
+    height: 55px; /* Adjust size to be slightly larger than the text */
     width: auto;
 }
 
