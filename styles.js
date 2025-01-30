@@ -43,8 +43,10 @@ async function renderTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <i class="bi ${task.icon}" style="font-size: 1.5rem; margin-right: 10px;"></i>
-            <span class="${task.done ? 'done' : ''}">${task.text}</span>
+            <div class="task-content">
+                <i class="bi ${task.icon}" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                <span class="${task.done ? 'done' : ''}">${task.text}</span>
+            </div>
             <div class="button-container">
                 <button onclick="editTask(${index}, '${task.text}')">Edit</button>
                 <button onclick="deleteTask(${index})">Done</button>
@@ -66,20 +68,20 @@ taskForm.addEventListener("submit", async (e) => {
 
 async function editTask(index, currentText) {
     const tasks = await fetchTasks();
-    const currentIcon = tasks[index].icon; // Get current icon
+    const currentIcon = tasks[index].icon; 
     const li = taskList.children[index];
 
-    // Replace task text with an input field and icon selector
     li.innerHTML = `
-        <select id="editIcon${index}">
-            <option value="bi-rocket-fill" ${currentIcon === "bi-rocket-fill" ? "selected" : ""}>🚀 Starship</option>
-            <option value="bi-activity" ${currentIcon === "bi-activity" ? "selected" : ""}>🦾 Exosuit</option>
-            <option value="bi-building-fill" ${currentIcon === "bi-building-fill" ? "selected" : ""}>🏠 Base</option>
-            <option value="bi-currency-dollar" ${currentIcon === "bi-currency-dollar" ? "selected" : ""}>💰 Money</option>
-        </select>
-        
-        <input type="text" value="${currentText}" id="editInput${index}" class="edit-input" />
-        
+        <div class="task-content">
+            <select id="editIcon${index}" class="icon-dropdown">
+                <option value="bi-question-lg" ${currentIcon === "bi-question-lg" ? "selected" : ""}>❓</option>
+                <option value="bi-rocket-fill" ${currentIcon === "bi-rocket-fill" ? "selected" : ""}>🚀 Starship</option>
+                <option value="bi-activity" ${currentIcon === "bi-activity" ? "selected" : ""}>🦾 Exosuit</option>
+                <option value="bi-building-fill" ${currentIcon === "bi-building-fill" ? "selected" : ""}>🏠 Base</option>
+                <option value="bi-currency-dollar" ${currentIcon === "bi-currency-dollar" ? "selected" : ""}>💰 Profit</option>
+            </select>
+            <input type="text" value="${currentText}" id="editInput${index}" class="edit-input" />
+        </div>
         <div class="button-container">
             <button onclick="saveEdit(${index})">Save</button>
             <button onclick="renderTasks()">Cancel</button>
