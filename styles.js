@@ -5,6 +5,36 @@ const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
+   // Store user credentials
+        const users = {
+            "Henzwee": "captain",
+            "Doakley42": "heartfailure"
+        };
+
+        // Handle the login process
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            // Validate user credentials
+            if (users[username] && users[username] === password) {
+                // Redirect to the user's page if credentials are valid
+                window.location.href = `${username}.html`;
+            } else {
+                // Add 'invalid' class to highlight invalid input fields
+                const usernameField = document.getElementById("username");
+                const passwordField = document.getElementById("password");
+                usernameField.classList.add("invalid");
+                passwordField.classList.add("invalid");
+
+                // Optionally, add a timeout to remove the invalid class
+                setTimeout(() => {
+                    usernameField.classList.remove("invalid");
+                    passwordField.classList.remove("invalid");
+                }, 2000);
+            }
+        }
 // Fetch tasks from JSONBin
 async function fetchTasks() {
     try {
