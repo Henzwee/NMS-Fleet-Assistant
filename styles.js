@@ -1,6 +1,15 @@
+// Retrieve the username from sessionStorage
+const currentUser = sessionStorage.getItem("username");
+
+// Optionally, if there's no user stored, you can redirect them back to login:
+if (!currentUser) {
+  window.location.href = "login.html";  // or your login page URL
+}
+
 const API_URL = "https://api.jsonbin.io/v3/b/6791d562ad19ca34f8f30024"; // Your JSONBin URL
 const API_KEY = "$2a$10$KpiDLKLCc341TzIpvhpAu.nXgYzTLRPcIoJII.z3cpl9qZsD6kU/W"; // Updated API Key
 
+// DOM elements
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
@@ -23,7 +32,7 @@ async function fetchTasks() {
 
 // Update tasks in JSONBin
 async function updateTasks(tasks) {
-    console.log("Updating tasks:", tasks); // Debugging line
+    console.log("Updating tasks:", tasks);
     try {
         await fetch(API_URL, {
             method: "PUT",
@@ -38,14 +47,18 @@ async function updateTasks(tasks) {
     }
 }
 
+// Render tasks including the username info
 async function renderTasks() {
     const tasks = await fetchTasks();
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
-        const safeText = task.text.replace(/'/g, "&apos;"); // Escape single quotes
+        const safeText = task.text.replace(/'/g, "&apos;");
+        const safeUser = task.user ? task.user.replace(/'/g, "&apos;") : "Unknown";
         const li = document.createElement("li");
         li.innerHTML = `
-            <span class="${task.done ? 'done' : ''}">${safeText}</span>
+            <span class="${task.done ? 'done' : ''}">
+                ${safeText} <small>(by ${safeUser})</small>
+            </span>
             <div class="button-container">
                 <button onclick="editTask(${index}, '${safeText}')">Edit</button>
                 <button onclick="deleteTask(${index})">Done</button>
@@ -55,16 +68,16 @@ async function renderTasks() {
     });
 }
 
-// Add a new task
+// Add a new task including the current user's name
 taskForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const tasks = await fetchTasks();
 
-    // Assign a unique ID using timestamp
     const newTask = {
-        id: Date.now(), // Creates a unique identifier
+        id: Date.now(),
         text: taskInput.value,
-        done: false
+        done: false,
+        user: currentUser  // Attach the username from login
     };
 
     tasks.push(newTask);
@@ -73,9 +86,10 @@ taskForm.addEventListener("submit", async (e) => {
     renderTasks();
 });
 
+// Edit an existing task's text (the user property remains unchanged)
 async function editTask(index, currentText) {
     const tasks = await fetchTasks();
-    const taskId = tasks[index].id;  // Store the ID of the task
+    const taskId = tasks[index].id;
     const li = taskList.querySelectorAll("li")[index];
 
     li.innerHTML = `
@@ -89,10 +103,9 @@ async function editTask(index, currentText) {
 
 async function saveEdit(taskId) {
     const tasks = await fetchTasks();
-    const taskIndex = tasks.findIndex(task => task.id === taskId); // Find correct task
-
-    if (taskIndex === -1) return; // Prevent errors
-
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+    if (taskIndex === -1) return;
+    
     const editInput = document.getElementById(`editInput${taskId}`);
     tasks[taskIndex].text = editInput.value;
 
