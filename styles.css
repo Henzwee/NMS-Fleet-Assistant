@@ -98,28 +98,8 @@ button, .button, li .button-container button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    width: 100px; /* Standardized button size */
-    max-width: 150px;
-}
-
-li .button-container button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 40px; /* Ensures consistency across all buttons */
-    padding: 12px 20px; /* Keeps proper button spacing */
-    font-size: 16px;
-    font-weight: 700;
-    background-color: #cf475a;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Kanit', sans-serif;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    text-decoration: none;
+    /* Use the wider mobile style for all screen sizes: */
+    width: 90%;
 }
 
 button:active, .button:active, li .button-container button:active {
@@ -164,6 +144,27 @@ li .button-container {
     flex-direction: column; /* Stack buttons vertically */
     gap: 5px; /* Space between buttons */
     align-items: flex-end; /* Align buttons to the right */
+}
+
+li .button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Removed the fixed width and height here: */
+    /* width: 100px; */
+    /* height: 40px; */
+    padding: 12px 20px; /* Keeps proper button spacing */
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #cf475a;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
 }
 
 /* Emergency Alert and Assistance Buttons */
@@ -212,9 +213,7 @@ li .button-container {
         width: 90%;
     }
 
-    button, .button {
-        width: 90%;
-    }
+    /* Removed the button width override since we want 90% at all sizes */
 
     h2 {
         text-align: center;
